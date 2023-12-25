@@ -1,4 +1,4 @@
-USER=k-pipe
+USER=kpipe
 IMAGE_NAME=optimizer
 IMAGE_TAG=$1
 IMAGE=$USER/$IMAGE_NAME:$IMAGE_TAG
