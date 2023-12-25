@@ -9,7 +9,7 @@ docker build . -t $IMAGE
 echo "===================================================================="
 echo "  Logging in to dockerhub with user $USER"
 echo "===================================================================="
-docker login --username $USER --password $DOCKER_HUB_PASSWORD
+docker docker login -u $USER -p ${{ secrets.DOCKERHUB_PUSH_TOKEN }}
 echo "===================================================================="
 echo "  Pushing image $IMAGE_ID"
 echo "===================================================================="
