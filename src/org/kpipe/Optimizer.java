@@ -21,6 +21,7 @@ public class Optimizer {
         if (commandFails()) {
             error("Could not execute test command (before removing any files)");
         }
+        System.out.println("Test with all files succeeded");
         Files.walk(Path.of(".")).forEach(this::checkFileNecessary);
     }
 
@@ -32,7 +33,9 @@ public class Optimizer {
 
     private void checkFileNecessary(Path path) {
         try {
-            tryCheckFileNecessary(path);
+            if (path.toFile().isFile()) {
+                tryCheckFileNecessary(path);
+            }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             error("Exception occurred for file "+path+": "+e.getMessage());
