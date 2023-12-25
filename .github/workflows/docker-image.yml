@@ -19,4 +19,6 @@ jobs:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '17'
     - name: Build the docker image
+      env:
+        DOCKERHUB_PUSH_TOKEN: ${{ secrets.DOCKERHUB_PUSH_TOKEN }}
       run:  sh build.sh latest
