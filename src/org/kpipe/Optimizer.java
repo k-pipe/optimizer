@@ -71,6 +71,7 @@ public class Optimizer {
                     Files.move(renamed(p), p);
                 }
                 int mid = (from+to)/2;
+                System.out.println("--> splitting "+from+"-.."+mid+"..."+to);
                 tryCheckFileNecessary(from, mid);
                 tryCheckFileNecessary(mid, to);
             }
