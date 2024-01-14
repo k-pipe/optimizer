@@ -6,4 +6,4 @@ RUN native-image org.kpipe.Optimizer --static --libc=musl -march=compatibility
 
 FROM alpine:3.18.4
 COPY --from=build /app/org.kpipe.optimizer /bin/optimizer
-# TODO SHOW license when executing the docker image
+RUN
